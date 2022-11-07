@@ -15,7 +15,7 @@
 
 / {
 	behaviors {
-		rst: boot_reset 
+		rst: boot_reset
 		{
 			compatible = "zmk,behavior-hold-tap";
 			label = "Bootloader Tap - Reset Hold";
@@ -25,7 +25,7 @@
 			bindings = <&reset>, <&bootloader>;
         };
 
-        bh: layer_taps 
+        bh: layer_taps
 		{
 			compatible = "zmk,behavior-hold-tap";
 			label = "Layer-Tap";
@@ -35,7 +35,7 @@
 			bindings = <&mo>, <&kp>;
         };
 
-        hm: homerow_mods0 
+        hm: homerow_mods0
 		{
 			compatible = "zmk,behavior-hold-tap";
 			label = "homerow mods";
@@ -44,8 +44,8 @@
             flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
         };
-        
-        hm1: homerow_mods1 
+
+        hm1: homerow_mods1
 		{
 			compatible = "zmk,behavior-hold-tap";
 			label = "homerow mods";
@@ -55,7 +55,7 @@
 			bindings = <&kp>, <&kp>;
         };
 
-        hm2: homerow_mods2 
+        hm2: homerow_mods2
 		{
 			compatible = "zmk,behavior-hold-tap";
 			label = "homerow mods 2";
@@ -85,43 +85,43 @@
 			key-positions = <8 9>;
 			bindings = <&kp BSPC>;
 		};
-		combo_gesc 
+		combo_gesc
 		{
 			timeout-ms = <30>;
 			key-positions = <0 1>;
 			bindings = <&com_col GRAVE ESC>;
 		};
-		combo_tab 
+		combo_tab
 		{
 			timeout-ms = <35>;
 			key-positions = <11 12>;
 			bindings = <&kp TAB>;
 		};
-		combo_mnxt 
+		combo_mnxt
 		{
 			timeout-ms = <30>;
 			key-positions = <28 29>;
 			bindings = <&kp C_NEXT>;
 		};
-		combo_mprev 
+		combo_mprev
 		{
 			timeout-ms = <30>;
 			key-positions = <27 28>;
-			bindings = <&kp C_PREV>;	
+			bindings = <&kp C_PREV>;
 		};
-		combo_mpp 
+		combo_mpp
 		{
 			timeout-ms = <30>;
 			key-positions = <27 29>;
 			bindings = <&kp C_PP>;
 		};
-		combo_del 
+		combo_del
 		{
 			timeout-ms = <40>;
 			key-positions = <7 8 9>;
 			bindings = <&kp DEL>;
 		};
-		combo_ent 
+		combo_ent
 		{
 			timeout-ms = <30>;
 			key-positions = <17 18>;
@@ -137,16 +137,16 @@
 };
 
 / {
-    keymap 
+    keymap
 	{
     compatible = "zmk,keymap";
 
     default_layer {
             bindings = <
-    &kp Q &kp W &kp F &kp P &kp G &kp J &kp L &kp U &kp Y &kp SQT
-    &hm2 LGUI A &hm LALT R &hm LCTRL S &hm1 LSHFT T &hm2 CLCK D &kp H &hm1 RSHFT N &hm RCTRL E &hm RALT I &hm2 LGUI O
-    &kp Z &kp X &kp C &kp V &kp B &kp K &kp M &com_col SEMI COMMA &kp DOT &kp FSLH
-    &kp TAB &bh 2 RET &bh 1 SPACE &bh 2 RET
+    &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp SQT
+    &kp A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &kp O
+    &kp Z &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp FSLH
+    &kp TAB &kp LCTRL &bh 1 SPACE &kp LALT
             >;
         };
 
