@@ -44,22 +44,14 @@
       bindings = <&kp COMMA>, <&kp SEMI>;
     };
 
-    la_alt: leftarrow_alt
+    aalt: arrow_alt
     {
-      compatible = "zmk,behavior-tap-dance";
-      label = "Once alt, twice left";
-      #binding-cells = <0>;
-      tapping-term-ms = <150>;
-      bindings = <&kp LALT>, <&kp LEFT>;
-    };
-
-    ra_alt: rightarrow_alt
-    {
-      compatible = "zmk,behavior-tap-dance";
-      label = "Once alt, twice right";
-      #binding-cells = <0>;
-      tapping-term-ms = <150>;
-      bindings = <&kp LALT>, <&kp RIGHT>;
+      compatible = "zmk,behavior-hold-tap";
+      label = "arrow and alt";
+      #binding-cells = <2>;
+      flavor = "hold-preferred";
+      tapping-term-ms = <200>;
+      bindings = <&kp>, <&kp>;
     };
   };
 };
@@ -113,7 +105,7 @@
     &kp Q         &kp W &kp F &kp P &kp B &kp J &kp L &kp U    &kp Y   &kp SQT
     &kp A         &kp R &kp S &kp T &kp G &kp M &kp N &kp E    &kp I   &kp O
     &mt LSHIFT Z  &kp X &kp C &kp D &kp V &kp K &kp H &com_col &kp DOT &mt LSHIFT FSLH
-    &la_alt &kp CAPS &bh 1 SPACE &ra_alt
+    &aalt LALT LEFT &kp CAPS &bh 1 SPACE &aalt LALT RIGHT
       >;
     };
 
