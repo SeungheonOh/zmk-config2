@@ -10,8 +10,11 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define DEFAULT 0
-#define NUM_SYM 1
-#define NAV     2
+#define NUM 1
+#define SYM 2
+#define FN 3
+#define NUM_SYM 4
+#define NAV     5
 
 / {
   behaviors {
@@ -64,29 +67,43 @@
       key-positions = <7 8>;
       bindings = <&kp BSPC>;
     };
-    combo_tab
-    {
+    combo_tab {
       timeout-ms = <50>;
       key-positions = <11 12>;
       bindings = <&kp TAB>;
     };
-    combo_del
-    {
+    combo_del {
       timeout-ms = <50>;
       key-positions = <7 8 9>;
       bindings = <&kp DEL>;
     };
-    combo_ent
-    {
+    combo_ent {
       timeout-ms = <50>;
       key-positions = <17 18>;
       bindings = <&kp RET>;
     };
-    combo_esc
-    {
+    combo_esc {
       timeout-ms = <50>;
       key-positions = <4 5>;
       bindings = <&kp ESC>;
+    };
+    combo_num {
+      timeout-ms = <100>;
+      key-positions = <21 22>;
+      layers = <DEFAULT>;
+      bindings = <&mo NUM>;
+    };
+    combo_sym {
+      timeout-ms = <100>;
+      key-positions = <27 28>;
+      layers = <DEFAULT>;
+      bindings = <&mo SYM>;
+    };
+    combo_fn {
+      timeout-ms = <100>;
+      key-positions = <21 23>;
+      layers = <DEFAULT>;
+      bindings = <&mo FN>;
     };
   };
 };
@@ -105,11 +122,38 @@
     &kp Q         &kp W &kp F &kp P &kp B &kp J &kp L &kp U    &kp Y   &kp SQT
     &kp A         &kp R &kp S &kp T &kp G &kp M &kp N &kp E    &kp I   &kp O
     &mt LSHIFT Z  &kp X &kp C &kp D &kp V &kp K &kp H &com_col &kp DOT &mt LSHIFT FSLH
-    &aalt LALT LEFT &kp CAPS &bh 1 SPACE &aalt LALT RIGHT
+    &aalt LALT LEFT &kp CAPS &kp SPACE &aalt LALT RIGHT
       >;
     };
 
-    num_sym {
+    num {
+      bindings = <
+    &none &none &none &kp C_VOL_UP &kp C_VOL_DN    &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
+    &none &none &none &none &kp C_PP               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
+    &none &none &none &none &none                  &none  &none  &none  &none  &none
+    &trans &trans &kp SPACE &trans
+      >;
+    };
+
+    sym {
+      bindings = <
+    &kp EXCL  &kp AT   &kp POUND &kp DLLR &kp PRCNT    &none &none &none &none &none
+    &kp CARET &kp AMPS &kp STAR  &kp LPAR &kp RPAR     &kp MINUS &kp UNDER &none &none &kp GRAVE
+    &kp PIPE  &kp LBKT &kp RBKT  &kp LBRC &kp RBRC     &kp EQUAL &kp PLUS  &none &none &kp BSLH
+    &trans &trans &kp SPACE &trans
+      >;
+    };
+
+    fn {
+      bindings = <
+    &reset &bootloader &none &none &none     &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
+    &none  &none       &none &none &none     &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
+    &none  &none       &none &none &none     &none  &none  &none  &none  &none
+    &trans &trans &kp SPACE &trans
+      >;
+    };
+
+   num_sym {
       bindings = <
     &kp N1   &kp N2   &kp N3    &kp N4         &kp N5    &kp N6    &kp N7   &kp N8   &kp N9    &kp N0
     &kp EXCL &kp AT   &kp POUND &mt LSHFT DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp EQUAL &kp MINUS
