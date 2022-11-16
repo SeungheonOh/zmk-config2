@@ -130,7 +130,7 @@
       bindings = <
     &none &none &none &kp C_VOL_DN &kp C_VOL_UP    &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
     &none &none &none &none &kp C_PP               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-    &none &none &none &none &none                  &none  &none  &none  &none  &none
+    &none &none &none &none &none                  &kp GRAVE &none &none &none &kp BLSH
     &trans &trans &kp SPACE &trans
       >;
     };
@@ -138,8 +138,8 @@
     sym {
       bindings = <
     &kp EXCL  &kp AT   &kp POUND &kp DLLR &kp PRCNT    &kp GRAVE &kp BSLH  &none &none &none
-    &kp CARET &kp AMPS &kp STAR  &kp LPAR &kp RPAR     &kp MINUS &kp UNDER &none &none &kp GRAVE
-    &kp PIPE  &kp LBKT &kp RBKT  &kp LBRC &kp RBRC     &kp EQUAL &kp PLUS  &none &none &kp BSLH
+    &kp CARET &kp AMPS &kp STAR  &kp LPAR &kp RPAR     &kp MINUS &kp UNDER &none &none &none
+    &kp PIPE  &kp LBKT &kp RBKT  &kp LBRC &kp RBRC     &kp EQUAL &kp PLUS  &none &none &none
     &trans &trans &kp SPACE &trans
       >;
     };
