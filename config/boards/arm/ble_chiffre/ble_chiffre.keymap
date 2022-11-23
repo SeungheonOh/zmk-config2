@@ -50,11 +50,12 @@
 
     q_esc: q_escape
     {
-      compatible = "zmk,behavior-tap-dance";
+      compatible = "zmk,behavior-hold-tap";
       label = "q and escape";
-      #binding-cells = <0>;
+      #binding-cells = <2>;
+      flavor = "hold-preferred";
       tapping-term-ms = <200>;
-      bindings = <&kp Q>, <&kp ESC>;
+      bindings = <&kp>, <&kp>;
     };
   };
 };
@@ -119,7 +120,7 @@
 
     default_layer {
       bindings = <
-    &q_esc        &kp W &kp F &kp P &kp B &kp J &kp L &kp U  &kp Y   &kp SQT
+    &q_esc ESC Q  &kp W &kp F &kp P &kp B &kp J &kp L &kp U  &kp Y   &kp SQT
     &kp A         &kp R &kp S &kp T &kp G &kp M &kp N &kp E  &kp I   &kp O
     &mt LSHIFT Z  &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &mt LSHIFT FSLH
     &aalt LALT LEFT &kp CAPS &kp SPACE &aalt LALT RIGHT
