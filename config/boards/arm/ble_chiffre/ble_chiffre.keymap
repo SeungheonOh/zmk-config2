@@ -10,11 +10,12 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define DEFAULT 0
-#define NUM 1
-#define SYM 2
-#define FN 3
-#define NUM_SYM 4
-#define NAV     5
+#define MTGAP 1
+#define NUM 2
+#define SYM 3
+#define FN 4
+#define NUM_SYM 5
+#define NAV     6
 
 / {
   behaviors {
@@ -42,16 +43,6 @@
     {
       compatible = "zmk,behavior-hold-tap";
       label = "arrow and alt";
-      #binding-cells = <2>;
-      flavor = "hold-preferred";
-      tapping-term-ms = <200>;
-      bindings = <&kp>, <&kp>;
-    };
-
-    q_esc: q_escape
-    {
-      compatible = "zmk,behavior-hold-tap";
-      label = "q and escape";
       #binding-cells = <2>;
       flavor = "hold-preferred";
       tapping-term-ms = <200>;
@@ -86,19 +77,19 @@
     combo_num {
       timeout-ms = <100>;
       key-positions = <21 22>;
-      layers = <DEFAULT>;
+      layers = <DEFAULT MTGAP>;
       bindings = <&mo NUM>;
     };
     combo_sym {
       timeout-ms = <100>;
       key-positions = <27 28>;
-      layers = <DEFAULT>;
+      layers = <DEFAULT MTGAP>;
       bindings = <&mo SYM>;
     };
     combo_fn {
       timeout-ms = <100>;
       key-positions = <21 23>;
-      layers = <DEFAULT>;
+      layers = <DEFAULT MTGAP>;
       bindings = <&mo FN>;
     };
     combo_haneyong {
@@ -120,18 +111,27 @@
 
     default_layer {
       bindings = <
-    &q_esc ESC Q  &kp W &kp F &kp P &kp B &kp J &kp L &kp U  &kp Y   &kp SQT
-    &kp A         &kp R &kp S &kp T &kp G &kp M &kp N &kp E  &kp I   &kp O
-    &mt LSHIFT Z  &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &mt LSHIFT FSLH
+    &kp Q        &kp W &kp F &kp P &kp B &kp J &kp L &kp U  &kp Y   &kp SQT
+    &kp A        &kp R &kp S &kp T &kp G &kp M &kp N &kp E  &kp I   &kp O
+    &mt LSHIFT Z &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &mt LSHIFT FSLH
+    &aalt LALT LEFT &kp CAPS &kp SPACE &aalt LALT RIGHT
+      >;
+    };
+
+    mt_gap {
+      bindings = <
+    &kp Y        &kp P &kp O &kp U &kp J    &kp K &kp D &kp L &kp C &kp W
+    &kp I        &kp N &kp E &kp A &kp SQT  &kp M &kp H &kp T &kp S &kp R
+    &mt LSHIFT Q &kp Z &kp < &kp > &kp FSLH &kp B &kp F &kp G &kp V &mt LSHIFT X
     &aalt LALT LEFT &kp CAPS &kp SPACE &aalt LALT RIGHT
       >;
     };
 
     num {
       bindings = <
-    &none &none &none &kp C_VOL_DN &kp C_VOL_UP    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-    &none &none &none &none &kp C_PP               &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
-    &none &none &none &none &none                  &kp GRAVE &kp TILDE &kp COLON &kp SEMI &kp BSLH
+    &none   &none &none &kp C_VOL_DN &kp C_VOL_UP    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
+    &none   &none &none &none &kp C_PP               &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
+    &kp ESC &none &none &none &none                  &kp GRAVE &kp TILDE &kp COLON &kp SEMI &kp BSLH
     &trans &trans &kp SPACE &trans
       >;
     };
@@ -147,9 +147,9 @@
 
     fn {
       bindings = <
-    &reset    &bootloader &none &none &none     &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
-    &none     &none       &none &none &none     &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
-    &kp PSCRN &none       &none &none &none     &none  &none  &none  &none  &none
+    &reset    &bootloader &none &to DEFAULT &to MTGAP     &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
+    &none     &none       &none &none &none               &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
+    &kp PSCRN &none       &none &none &none               &none  &none  &none  &none  &none
     &trans &trans &kp SPACE &trans
       >;
     };
