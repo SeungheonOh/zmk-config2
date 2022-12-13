@@ -97,7 +97,7 @@
     };
     combo_super {
       timeout-ms = <250>;
-      key-positions = <30 32>
+      key-positions = <30 32>;
       bindings = <&kp LMETA>;
     };
   };
