@@ -95,6 +95,11 @@
       key-positions = <30 33>;
       bindings = <&kp RALT>;
     };
+    combo_super {
+      timeout-ms = <250>;
+      key-positions = <30 32>
+      bindings = <&kp LMETA>;
+    };
   };
 };
 
